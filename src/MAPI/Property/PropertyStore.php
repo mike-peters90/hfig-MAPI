@@ -152,6 +152,11 @@ class PropertyStore
 
             //# a bit sus
             $guid_off = $flags >> 1;
+
+            if (!isset($guids[$guid_off - 2])) {
+                return null;
+            }
+
             $guid = $guids[$guid_off - 2];
 
             /*$properties[] = [
